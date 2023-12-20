@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300&family=Open+Sans:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>MaGiC</title>
+    <script src="captcha.js"></script>
+</head>
+
+<body onload="generate()">
+
+
+    <div class="navbar d-flex-row item-center">
+        <h1>MaGiC </h1>
+        <div>
+            <input type="text" placeholder="search" class="search rad-6 item-center">
+        </div>
+    </div>
+    <div class="bgend d-flex-row item-center">
+        <a href="home.html"> الصفحة الرئيسية</a>
+        <a href="AboutUs.html">من نحن </a>
+        <a href="Appliances.html"> المنتجات</a>
+    </div>
+    <section>
+
+        <div class="prodacts d-flex-row item-center">
+            <div class="prodact rad-6 item-center">
+                <div class="procard item-center">
+                    <div class="info_1 d-flex-column rad-6 item-center">
+                        <img src="Image/microwave.jpg" width="70" height="70" class="productImage">
+                        <p class="productName">فرن من بلاك ديكر</p>
+                    </div>
+                    <div class="info_2 d-flex-column item-center">
+                        <ul>
+                            <li class="productPrice">1300000 s.p</li>
+                            <li class="productDescription">فرن و ميكرويف رقمي</li>
+                            <li>مع زر ضغط قابل للدوران </li>
+                            <li>قفل امان للاطفال</li>
+                            <li>700 وات</li>
+                            <li>ستانلس ستيل</li>
+                        </ul>
+                        <button class="addToCartBtn" data-product="Product 1">add to cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="prodact d-flex-row rad-6 item-center">
+                <div class="procard item-center">
+                    <div class="info_1 d-flex-column rad-6 item-center">
+                        <img src="Image/rifregerator.jpg" width="70" height="70" class="productImage">
+                        <p class="productName">ثلاجة انوكس</p>
+                    </div>
+                    <div class="info_2 d-flex-column item-center">
+                        <ul>
+                            <li class="productPrice">4610000 s.p</li>
+                            <li class="productDescription">3.5 متر مربع</li>
+                            <li> ثلاجة صغيرة ببابين مع فريزر </li>
+                            <li>لون فضي </li>
+                        </ul>
+                        <button class="addToCartBtn" data-product="Product 2">add to cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="prodact d-flex-row rad-6 item-center">
+                <div class="procard item-center">
+                    <div class="info_1 d-flex-column rad-6 item-center">
+                        <img src="Image/camera.jpg" width="70" height="70" class="productImage">
+                        <p class="productName">كاميرا فوجي فيلم</p>
+                    </div>
+                    <div class="info_2 d-flex-column item-center">
+                        <ul>
+                            <li class="productPrice">1664000 s.p</li>
+                            <li class="productDescription"> كاميرا فورية</li>
+                            <li>ذهبي فاتح</li>
+                        </ul>
+                        <button class="addToCartBtn" data-product="Product 3">add to cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="prodact d-flex-row rad-6 item-center">
+                <div class="procard item-center">
+                    <div class="info_1 d-flex-column rad-6 item-center">
+                        <img src="Image/air conditioner.jpg" width="70" height="70" class="productImage">
+                        <p class="productName">airhalf مكيف هواء</p>
+                    </div>
+                    <div class="info_2 d-flex-column item-center">
+                        <ul>
+                            <li class="productPrice">780000 s.p</li>
+                            <li class="productDescription"> مكيف هواء محمول3 في 1</li>
+                            <li>3 سرعات</li>
+                            <li>يعمل بمنفذ USB</li>
+                        </ul>
+                        <button class="addToCartBtn" data-product="Product 4">add to cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="prodact d-flex-row rad-6 item-center">
+                <div class="procard item-center">
+                    <div class="info_1 d-flex-column rad-6 item-center">
+                        <img src="Image/thermostat.jpg" width="70" height="70" class="productImage">
+                        <p class="productName">منظم حرارة ذكي</p>
+                    </div>
+                    <div class="info_2 d-flex-column item-center">
+                        <ul>
+                            <li class="productPrice">468000 s.p</li>
+                            <li class="productDescription">موفر للمال و الطاقة </li>
+                            <li>يعمل مع alexa و ring</li>
+                            <li>يتطلب سلك C</li>
+                        </ul>
+                        <button class="addToCartBtn" data-product="Product 5">add to cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="prodact d-flex-row rad-6 item-center">
+                <div class="procard item-center">
+                    <div class="info_1 d-flex-column rad-6 item-center">
+                        <img src="Image/security camera.jpg" width="70" height="70" class="productImage">
+                        <p class="productName">امن المنزل اللاسلكي</p>
+                    </div>
+                    <div class="info_2 d-flex-column item-center">
+                        <ul>
+                            <li class="productPrice">1180000 s.p</li>
+                            <li class="productDescription">رؤية ليلية</li>
+                            <li>فيديو عالي الدقة</li>
+                            <li>يتضمن التخزين السحابي</li>
+                        </ul>
+                        <button class="addToCartBtn" data-product="Product 6">add to cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="prodact d-flex-row rad-6 item-center">
+                <div class="procard item-center">
+                    <div class="info_1 d-flex-column rad-6 item-center">
+                        <img src="Image/tv.jpg" width="70" height="70" class="productImage">
+                        <p class="productName">Smart Visa TV</p>
+                    </div>
+                    <div class="info_2 d-flex-column item-center">
+                        <ul>
+                            <li class="productPrice"> 3757000 s.p</li>
+                            <li class="productDescription">2022موديل</li>
+                            <li>مع apple airplay,alexa</li>
+                        </ul>
+                        <button class="addToCartBtn" data-product="Product 7">add to cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="prodact d-flex-row rad-6 item-center">
+                <div class="procard item-center">
+                    <div class="info_1 d-flex-column rad-6 item-center">
+                        <img src="Image/blender.jpg" width="70" height="70" class="productImage">
+                        <p class="productName">خلاط نينجا</p>
+                    </div>
+                    <div class="info_2 d-flex-column item-center">
+                        <ul>
+                            <li class="productPrice"> 1650000 s.p</li>
+                            <li class="productDescription">وزن 72 اونصة </li>
+                            <li>1000 واط</li>
+                            <li>تقنية سحق كاملة للعصائر و الثلج</li>
+                            <li>اسود</li>
+                        </ul>
+                        <button class="addToCartBtn" data-product="Product 8">add to cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="prodact d-flex-row rad-6 item-center">
+                <div class="procard item-center">
+                    <div class="info_1 d-flex-column rad-6 item-center">
+                        <img src="Image/oven.jpg" width="70" height="70" class="productImage">
+                        <p class="productName">oven</p>
+                    </div>
+                    <div class="info_2 d-flex-column item-center">
+                        <ul>
+                            <li class="productPrice"> 1890776 s.p</li>
+                            <li class="productDescription">جيد للخبز و الشواء</li>
+                            <li>يحافظ على الدفء </li>
+                            <li>ستانلس ستيل ، اسود</li>
+                        </ul>
+                        <button class="addToCartBtn" data-product="Product 9">add to cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="prodact d-flex-row rad-6 item-center">
+                <div class="procard item-center">
+                    <div class="info_1 d-flex-column rad-6 item-center">
+                        <img src="Image/vacume.jpg" width="70" height="70" class="productImage">
+                        <p class="productName">روبوت للتنظيف</p>
+                    </div>
+                    <div class="info_2 d-flex-column item-center">
+                        <ul>
+                            <li class="productPrice"> 798433 s.p</li>
+                            <li class="productDescription">يتصل بالوايفاي</li>
+                            <li>يعمل مع alexa</li>
+                            <li>جيد لشعر الحيوانات الاليفة،السجاد،الارضيات الصلبة </li>
+                            <li>شحن ذاتي</li>
+                        </ul>
+                        <button class="addToCartBtn" data-product="Product 10">add to cart</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="cartPopup" class="cart d-flex-column item-center" style="display: none;text-align: center;">
+            <br />
+            <div class="shopping-cart">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>الماد ة</th>
+                            <th>السعر </th>
+                            <th>الكمية</th>
+                            <th>السعر الإجمالي</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-items">
+                        <!-- Cart items will be dynamically added here -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">الضريبة 5% </td>
+                            <td><span id="cart-tax">0</span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">المجموع النهائي</td>
+                            <td><span id="cart-final-price"></span></td>
+                        <tr>
+                            <td colspan="4">
+                                <button onclick="closeCart()">إغلاق</button>&nbsp;&nbsp;
+                                <button onclick="clearCart()">إلغاء</button>&nbsp;&nbsp;
+                                <button onclick="proceedToCheckout()">متابعة</button>&nbsp;&nbsp;
+                            </td>
+
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <div class="cart-summary">
+                    <!-- <p>Tax: <span id="cart-tax">0</span></p> -->
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="cart d-flex-column item-center" id="cart_submit" style="display: none;">
+            <p> معلومات الزبون </p>
+            <form class="form">
+                <div>
+                    <label>الاسم الكامل</label>
+                    <input type="text" placeholder="type your name " lang="ar" required>
+                </div>
+                <div> <label>رقم الهاتف</label>
+                    <input type="text" placeholder="type your phone number" name="phonenumber"
+                        pattern="((0)(93|94|95|96|98|99)([0-9]{7}))|((0)(92|95|96|97)([0-9]{7}))" required>
+                </div>
+                <div> <label> تاريخ الميلاد</label>
+                    <input type="date" required>
+                </div>
+                <div> <label>البريد الالكتروني</label>
+                    <input type="email" placeholder="Enter your email" required>
+                </div>
+                <div> <label>الرقم الوطني</label>
+                    <select required>
+
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                        <option>04</option>
+                        <option>05</option>
+                        <option>06</option>
+                        <option>07</option>
+                        <option>08</option>
+                        <option>09</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                        <option>13</option>
+                        <option>14</option>
+                    </select>
+                    <input type="text" maxlength="9" minlength="9" required>
+                </div>
+                <br />
+                <div onclick="generate()">
+                    <label>رمز التحقق</label>
+                    <i class="fas fa-sync"></i>
+                    <div id="image" selectable="False">
+                    </div>
+                </div>
+                <br />
+                <div id="user-input">
+                    <input type="text" id="submit" required="true" placeholder="Captcha code" style="
+                    width: 100%;" />
+                </div>
+                <p id="key"></p>
+                <input type="submit" id="btn" onclick="printmsg()"/>
+            </form>
+        </div>
+
+        <script>
+            let cartItems = [];
+            // Function to add a product to the shopping cart
+            function addToCart(event) {
+                const product = event.target.closest('.prodact');
+                const image = product.querySelector('.productImage').src;
+                const name = product.querySelector('.productName').innerText;
+                const price = product.querySelector('.productPrice').innerText;
+                const description = product.querySelector('.productDescription').innerText;
+                const existingItem = cartItems.find(item => item.productName === name);
+
+                if (existingItem) {
+                    existingItem.quantity++; // Increment the quantity if the product exists
+                    existingItem.totalPrice = existingItem.price.replace(" s.p", "") * existingItem.quantity; // Update the total price
+                    existingItem.totalPrice += " s.p"
+                } else {
+                    const newItem = {
+                        productName: name,
+                        price: price,
+                        quantity: 1,
+                        totalPrice: price
+                    };
+                    cartItems.push(newItem);
+                }
+                displayCart();
+            }
+
+            // Get all "add to cart" buttons
+            const addToCartButtons = document.querySelectorAll('.addToCartBtn');
+
+            // Add event listener to each "add to cart" button
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', addToCart);
+            });
+            function displayCart() {
+                const cartPopup = document.getElementById('cartPopup');
+                cartPopup.style.display = 'block';
+                const cartItemsContainer = document.getElementById('cart-items');
+                cartItemsContainer.innerHTML = ''; // Clear previous contents
+
+                var totalPrice = 0;
+
+                cartItems.forEach(item => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                    <td>${item.productName}</td>
+                    <td>${item.price}</td>
+                    <td>${item.quantity}</td>
+                    <td>${item.totalPrice}</td>
+                `;
+                    cartItemsContainer.appendChild(row);
+
+
+                    // Update totalPrice by adding the price of each item
+                    totalPrice += parseFloat(item.totalPrice.replace(" s.p", ""));;
+                });
+
+                // Display total price and tax
+                var tax = 0.05 * totalPrice; // Modify this for your tax calculation
+                var finalPrice = totalPrice + tax;
+                document.getElementById('cart-tax').textContent = Math.floor(tax) + " s.p";
+                document.getElementById('cart-final-price').textContent = Math.floor(finalPrice) + " s.p";
+            }
+
+
+            // Function to clear the cart
+            function clearCart() {
+                cartItems = [];
+                displayCart();
+            }
+
+            // Function to close the cart
+            function closeCart() {
+                // Implement your logic to close the cart
+                const cartPopup = document.getElementById('cartPopup');
+                cartPopup.style.display = 'none';
+                console.log('Closing the cart...');
+            }
+            function proceedToCheckout() {
+                const cart_submit = document.getElementById('cart_submit');
+                cart_submit.style.display = 'flex';
+            }
+            let captcha;
+            function generate() {
+
+                // Clear old input
+                document.getElementById("submit").value = "";
+
+                // Access the element to store
+                // the generated captcha
+                captcha = document.getElementById("image");
+                let uniquechar = "";
+
+                const randomchar =
+                    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+                // Generate captcha for length of
+                // 5 with random character
+                for (let i = 1; i < 5; i++) {
+                    uniquechar += randomchar.charAt(
+                        Math.random() * randomchar.length)
+                }
+
+                // Store generated input
+                captcha.innerHTML = uniquechar;
+            }
+
+            function printmsg() {
+                const usr_input = document
+                    .getElementById("submit").value;
+
+                // Check whether the input is equal
+                // to generated captcha or not
+                if (usr_input == captcha.innerHTML) {
+                    let s = document.getElementById("key")
+                        .innerHTML = "Matched";
+                    
+                }
+                else {
+                    let s = document.getElementById("key")
+                        .innerHTML = "not Matched";
+                    generate();
+                }
+            }
+
+        </script>
+</body>
+
+</html>
