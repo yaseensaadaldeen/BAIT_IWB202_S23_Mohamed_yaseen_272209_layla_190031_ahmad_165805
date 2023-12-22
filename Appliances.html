@@ -249,7 +249,7 @@
 
             <div id="cart_submit" class="hidden" style="text-align: center;">
                 <p> معلومات الزبون </p>
-                <form class="form">
+                <form class="form" onsubmit="return checkAge()">
                     <div>
                         <label>الاسم الكامل</label>
                         <input name="arabicNameInput" type="text" id="arabicNameInput"
@@ -436,7 +436,7 @@
 
                 // للتحقق من أن النص المدخل مساوي لقيمة
                 //  captcha 
-                if (checkAge()) {
+              
                     if (usr_input == captcha.innerHTML) {
                         let s = document.getElementById("key")
                             .innerHTML = "Matched";
@@ -449,7 +449,7 @@
                             .innerHTML = "not Matched";
                         generate();
                     }
-                }
+                
             }
             const arabicNameInput = document.getElementById("arabicNameInput");
 
