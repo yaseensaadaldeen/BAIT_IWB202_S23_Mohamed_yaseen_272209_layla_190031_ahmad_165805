@@ -24,12 +24,9 @@
             <input type="text" placeholder="search" class="search rad-6 item-center">
         </div>
     </div>
-    <div class="bgend d-flex-row item-center">
-        <a href="home.html"> الصفحة الرئيسية</a>
-        <a href="AboutUs.html">من نحن </a>
-        <a href="Appliances.html"> المنتجات</a>
-    </div>
-    <section>
+
+    <section style=" display: flex;   flex-direction: column;
+    min-height: 100vh">
 
         <div class="prodacts d-flex-row item-center">
             <div class="prodact rad-6 item-center">
@@ -206,107 +203,125 @@
 
             </div>
         </div>
+        <div class="cart d-flex-column item-center " style="flex: 1;">
 
-        <div id="cartPopup" class="cart d-flex-column item-center" style="display: none;text-align: center;">
-            <br />
-            <div class="shopping-cart">
-                <table class="styled-table">
-                    <thead>
-                        <tr>
-                            <th>الماد ة</th>
-                            <th>السعر </th>
-                            <th>الكمية</th>
-                            <th>السعر الإجمالي</th>
-                        </tr>
-                    </thead>
-                    <tbody id="cart-items">
-                        <!-- Cart items will be dynamically added here -->
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="3">الضريبة 5% </td>
-                            <td><span id="cart-tax">0</span></td>
-                        </tr>
-                        <tr>
-                            <td colspan="3">المجموع النهائي</td>
-                            <td><span id="cart-final-price"></span></td>
-                        <tr>
-                            <td colspan="4">
-                                <button onclick="closeCart()">إغلاق</button>&nbsp;&nbsp;
-                                <button onclick="clearCart()">إلغاء</button>&nbsp;&nbsp;
-                                <button onclick="proceedToCheckout()">متابعة</button>&nbsp;&nbsp;
-                            </td>
-
-                        </tr>
-                    </tfoot>
-                </table>
-
-                <div class="cart-summary">
-                    <!-- <p>Tax: <span id="cart-tax">0</span></p> -->
-
-                </div>
-            </div>
-
-        </div>
-
-        <div class="cart d-flex-column item-center" id="cart_submit" style="display: none;">
-            <p> معلومات الزبون </p>
-            <form class="form">
-                <div>
-                    <label>الاسم الكامل</label>
-                    <input type="text" placeholder="type your name " lang="ar" required>
-                </div>
-                <div> <label>رقم الهاتف</label>
-                    <input type="text" placeholder="type your phone number" name="phonenumber"
-                        pattern="((0)(93|94|95|96|98|99)([0-9]{7}))|((0)(92|95|96|97)([0-9]{7}))" required>
-                </div>
-                <div> <label> تاريخ الميلاد</label>
-                    <input type="date" required>
-                </div>
-                <div> <label>البريد الالكتروني</label>
-                    <input type="email" placeholder="Enter your email" required>
-                </div>
-                <div> <label>الرقم الوطني</label>
-                    <select required>
-
-                        <option>01</option>
-                        <option>02</option>
-                        <option>03</option>
-                        <option>04</option>
-                        <option>05</option>
-                        <option>06</option>
-                        <option>07</option>
-                        <option>08</option>
-                        <option>09</option>
-                        <option>10</option>
-                        <option>11</option>
-                        <option>12</option>
-                        <option>13</option>
-                        <option>14</option>
-                    </select>
-                    <input type="text" maxlength="9" minlength="9" required>
-                </div>
+            <div id="cartPopup" class="cart d-flex-column item-center hidden" style="text-align: center;">
                 <br />
-                <div onclick="generate()">
-                    <label>رمز التحقق</label>
-                    <i class="fas fa-sync"></i>
-                    <div id="image" selectable="False">
+                <div class="shopping-cart">
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th>الماد ة</th>
+                                <th>السعر </th>
+                                <th>الكمية</th>
+                                <th>السعر الإجمالي</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-items">
+                            <!-- Cart items will be dynamically added here -->
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3">الضريبة 5% </td>
+                                <td><span id="cart-tax">0</span></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">المجموع النهائي</td>
+                                <td><span id="cart-final-price"></span></td>
+                            <tr>
+                                <td colspan="4">
+                                    <button onclick="closeCart()">إغلاق</button>&nbsp;&nbsp;
+                                    <button onclick="clearCart()">إلغاء</button>&nbsp;&nbsp;
+                                    <button onclick="proceedToCheckout()">متابعة</button>&nbsp;&nbsp;
+                                </td>
+
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                    <div class="cart-summary">
+                        <!-- <p>Tax: <span id="cart-tax">0</span></p> -->
+
                     </div>
                 </div>
-                <br />
-                <div id="user-input">
-                    <input type="text" id="submit" required="true" placeholder="Captcha code" style="
+
+            </div>
+
+            <div id="cart_submit" class="hidden" style="text-align: center;">
+                <p> معلومات الزبون </p>
+                <form class="form">
+                    <div>
+                        <label>الاسم الكامل</label>
+                        <input type="text" placeholder="type your name " lang="ar" required>
+                    </div>
+                    <div> <label>رقم الهاتف</label>
+                        <input type="text" placeholder="type your phone number" name="phonenumber"
+                            pattern="((0)(93|94|95|96|98|99)([0-9]{7}))|((0)(92|95|96|97)([0-9]{7}))" required>
+                    </div>
+                    <div> <label> تاريخ الميلاد</label>
+                        <input type="date" required>
+                    </div>
+                    <div> <label>البريد الالكتروني</label>
+                        <input type="email" placeholder="Enter your email" required>
+                    </div>
+                    <div> <label>الرقم الوطني</label>
+                      
+                        <input type="text" maxlength="9" minlength="9" required>
+                        <select style="margin-left: -40px" required>
+
+                            <option>01</option>
+                            <option>02</option>
+                            <option>03</option>
+                            <option>04</option>
+                            <option>05</option>
+                            <option>06</option>
+                            <option>07</option>
+                            <option>08</option>
+                            <option>09</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                            <option>13</option>
+                            <option>14</option>
+                        </select>
+                    </div>
+                    <br />
+                    <div onclick="generate()">
+                        <label>رمز التحقق</label>
+                        <i class="fas fa-sync"></i>
+                        <div id="image" selectable="False">
+                        </div>
+                    </div>
+                    <br />
+                    <div id="user-input">
+                        <input type="text" id="submit" required="true" placeholder="Captcha code" style="
                     width: 100%;" />
-                </div>
-                <p id="key"></p>
-                <input type="submit" id="btn" onclick="printmsg()"/>
-            </form>
+                    </div>
+                    <p id="key"></p>
+                    <button type="submit" style="margin-bottom: 50px; width: 100%;" id="btn" onclick="printmsg()" >Submit</button>
+
+                </form>
+            </div>
+            <div class="bgend d-flex-row item-center footer">
+                <a href="home.html"> الصفحة الرئيسية</a>
+                <a href="AboutUs.html">من نحن </a>
+                <a href="Appliances.html"> المنتجات</a>
+            </div>
         </div>
 
         <script>
+
+            // add to cart لجمع جميع أزرار 
+            const addToCartButtons = document.querySelectorAll('.addToCartBtn');
+
+            // add to cart اضافة حدث لجميع أزرار 
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', addToCart);
+            });
             let cartItems = [];
-            // Function to add a product to the shopping cart
+            // لاضافة المنتج لسلة المشتريات 
             function addToCart(event) {
+                //لجمع جميع العناصر ضمن أقرب كلاس منتج  للزر الذي تم ضغطه
                 const product = event.target.closest('.prodact');
                 const image = product.querySelector('.productImage').src;
                 const name = product.querySelector('.productName').innerText;
@@ -330,18 +345,11 @@
                 displayCart();
             }
 
-            // Get all "add to cart" buttons
-            const addToCartButtons = document.querySelectorAll('.addToCartBtn');
-
-            // Add event listener to each "add to cart" button
-            addToCartButtons.forEach(button => {
-                button.addEventListener('click', addToCart);
-            });
             function displayCart() {
                 const cartPopup = document.getElementById('cartPopup');
-                cartPopup.style.display = 'block';
+                show(cartPopup)
                 const cartItemsContainer = document.getElementById('cart-items');
-                cartItemsContainer.innerHTML = ''; // Clear previous contents
+                cartItemsContainer.innerHTML = ''; // لافراغ المحتويات السابقة
 
                 var totalPrice = 0;
 
@@ -356,34 +364,49 @@
                     cartItemsContainer.appendChild(row);
 
 
-                    // Update totalPrice by adding the price of each item
+                    // تعديل سعر المنتج الكلي 
                     totalPrice += parseFloat(item.totalPrice.replace(" s.p", ""));;
                 });
 
-                // Display total price and tax
-                var tax = 0.05 * totalPrice; // Modify this for your tax calculation
+                // لحساب المجموع الكلي والضريبة
+                var tax = 0.05 * totalPrice;
                 var finalPrice = totalPrice + tax;
                 document.getElementById('cart-tax').textContent = Math.floor(tax) + " s.p";
                 document.getElementById('cart-final-price').textContent = Math.floor(finalPrice) + " s.p";
             }
 
-
             // Function to clear the cart
             function clearCart() {
                 cartItems = [];
                 displayCart();
+                const cart_submit = document.getElementById('cart_submit');
+                hide(cart_submit);
             }
 
             // Function to close the cart
             function closeCart() {
-                // Implement your logic to close the cart
                 const cartPopup = document.getElementById('cartPopup');
-                cartPopup.style.display = 'none';
+                const cart_submit = document.getElementById('cart_submit');
+                hide(cartPopup);
+                hide(cart_submit);
                 console.log('Closing the cart...');
             }
             function proceedToCheckout() {
-                const cart_submit = document.getElementById('cart_submit');
-                cart_submit.style.display = 'flex';
+                if (cartItems.length > 0) {
+                    const cart_submit = document.getElementById('cart_submit');
+                    show(cart_submit);
+                }
+                else {
+                    alert("لطفاً شراء منتج للمتابعة");
+                }
+            }
+            function show($element) {
+                $element.classList.add("visible");
+                $element.classList.remove("hidden");
+            }
+            function hide($element) {
+                $element.classList.add("hidden");
+                $element.classList.remove("visible");
             }
             let captcha;
             function generate() {
@@ -419,7 +442,7 @@
                 if (usr_input == captcha.innerHTML) {
                     let s = document.getElementById("key")
                         .innerHTML = "Matched";
-                    
+
                 }
                 else {
                     let s = document.getElementById("key")
