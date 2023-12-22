@@ -252,14 +252,15 @@
                 <form class="form">
                     <div>
                         <label>الاسم الكامل</label>
-                        <input name="arabicNameInput" type="text" id="arabicNameInput" placeholder="لطفا الادخال بالعربية" lang="ar">
+                        <input name="arabicNameInput" type="text" id="arabicNameInput"
+                            placeholder="لطفا الادخال بالعربية" lang="ar">
                     </div>
                     <div> <label>رقم الهاتف</label>
                         <input type="text" placeholder="type your phone number" name="phonenumber"
                             pattern="((0)(93|94|95|96|98|99)([0-9]{7}))|((0)(92|95|96|97)([0-9]{7}))">
                     </div>
                     <div> <label> تاريخ الميلاد</label>
-                        <input name="birthdate" type="date" >
+                        <input name="birthdate" id="birthdate" type="date">
                     </div>
                     <div> <label>البريد الالكتروني</label>
                         <input name="email" type="email" placeholder="Enter your email">
@@ -418,7 +419,7 @@
                 const randomchar =
                     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-                
+
                 // انشاء النص بشكل عشوائي
                 for (let i = 1; i < 5; i++) {
                     uniquechar += randomchar.charAt(
@@ -435,17 +436,19 @@
 
                 // للتحقق من أن النص المدخل مساوي لقيمة
                 //  captcha 
-                if (usr_input == captcha.innerHTML) {
-                    let s = document.getElementById("key")
-                        .innerHTML = "Matched";
-                    $final_price = document.getElementById('cart-final-price').innerText;
-                    alert("تم إتمام عملية الشراء بنجاح القيمة الواجب دفعها :" + $final_price);
+                if (checkAge()) {
+                    if (usr_input == captcha.innerHTML) {
+                        let s = document.getElementById("key")
+                            .innerHTML = "Matched";
+                        $final_price = document.getElementById('cart-final-price').innerText;
+                        alert("تم إتمام عملية الشراء بنجاح القيمة الواجب دفعها :" + $final_price);
 
-                }
-                else {
-                    let s = document.getElementById("key")
-                        .innerHTML = "not Matched";
-                    generate();
+                    }
+                    else {
+                        let s = document.getElementById("key")
+                            .innerHTML = "not Matched";
+                        generate();
+                    }
                 }
             }
             const arabicNameInput = document.getElementById("arabicNameInput");
@@ -456,13 +459,50 @@
                     // لعدم السماح بكتابة الاسم بالانكليزية
                     event.target.value = event.target.value.replace(inputValue, '');
                     if (inputValue.trim() !== '')
-                    alert("انت تكتب بالانكليزية لطفا الكتابة بالعربية.");
+                        alert("انت تكتب بالانكليزية لطفا الكتابة بالعربية.");
                 }
             });
 
             function isArabic(text) {
                 const arabicRegex = /[\u0600-\u06FF]/;
                 return arabicRegex.test(text);
+            }
+
+            function getAge(birthDate) {
+                const today = new Date();
+                const birthDateObj = new Date(birthDate);
+
+                
+                const diffInYears = today.getFullYear() - birthDateObj.getFullYear();
+
+                // Adjust for the edge case where the birthday hasn't occurred yet this year
+                if (today.getMonth() < birthDateObj.getMonth() ||
+                    (today.getMonth() === birthDateObj.getMonth() && today.getDate() < birthDateObj.getDate())) {
+                    return diffInYears - 1 >= 18; 
+                }
+
+                return diffInYears ;
+            }
+
+            function checkAge() {
+                const birthDateInput = document.getElementById("birthdate");
+                const birthDateValue = birthDateInput.value;
+
+                const isOlder = getAge(birthDateValue);
+
+                if (isOlder >= 18 && isOlder <= 70) {
+
+                    return true;
+                }
+                else if (isOlder > 70)
+                {
+                    alert("لطفا ادخال تاريخ صحيح , يجب أن يكون أصغر  من 70");
+                    return false;
+                }
+                 else {
+                    alert("لطفا ادخال تاريخ صحيح , يجب أن يكون أكبر من 18");
+                    return false;
+                }
             }
 
         </script>
