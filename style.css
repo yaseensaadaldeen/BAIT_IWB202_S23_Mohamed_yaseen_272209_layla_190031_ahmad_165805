@@ -62,8 +62,8 @@ opacity: 0.5;
 h1{
     margin: 0;
     padding: 0;
-    font-size: 32px; /* Change font size for heading */
-    font-weight: 700; /* Change font weight for heading */
+    font-size: 32px;
+    font-weight: 700;
 }
 a{
     padding: 2px;
@@ -152,8 +152,8 @@ background-color: rgb(130, 185, 190 ,0.8);
 outline: none;
 }
 p {
-    font-size: 18px; /* Change font size for paragraphs */
-    font-weight: 400; /* Change font weight for paragraphs */
+    font-size: 18px;
+    font-weight: 400;
 }
 .form{
     display: flex;
@@ -179,7 +179,7 @@ p {
     bottom: 0;
     border:solid 1px;
 }
-/* Aboutus page */
+
 .info{
 min-height:86.5vh;
 font-size: 16px;
@@ -226,25 +226,23 @@ img{
     direction: rtl;
     text-align: center;
     width: 80%; 
-    margin: 0 auto; /* Centers the table by setting left and right margins */
-    border-collapse: collapse; /* Remove spaces between table cells */
-    border-radius: 10px; /* Rounded corners */
-    overflow: hidden; /* Hide content that exceeds the table's dimensions */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+    margin: 0 auto;
+    border-collapse: collapse;
+    border-radius: 10px; 
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  /* Style for table header */
   .styled-table th {
-    background-color:  #78909C; /* Set background color for table header */
-    padding: 12px; /* Set padding for table header cells */
-    text-align: center; /* Align text to the left */
+    background-color:  #78909C;
+    padding: 12px; 
+    text-align: center;
   }
   
-  /* Style for table rows */
   .styled-table td {
     border:  1px solid #ddd;
-    padding: 10px; /* Set padding for table cells */
-    border-bottom: 1px solid #ddd; /* Add bottom border */
+    padding: 10px; 
+    border-bottom: 1px solid #ddd;
   }
   .footer {
     position: fixed;

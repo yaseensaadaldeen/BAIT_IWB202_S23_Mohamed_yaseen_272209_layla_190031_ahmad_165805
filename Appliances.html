@@ -331,7 +331,7 @@
                 const existingItem = cartItems.find(item => item.productName === name);
 
                 if (existingItem) {
-                    existingItem.quantity++; // Increment the quantity if the product exists
+                    existingItem.quantity++; // لزيادة العدد في حال وجود المنتج سابقا
                     existingItem.totalPrice = existingItem.price.replace(" s.p", "") * existingItem.quantity; // Update the total price
                     existingItem.totalPrice += " s.p"
                 } else {
@@ -411,26 +411,21 @@
             }
             let captcha;
             function generate() {
-
-                // Clear old input
                 document.getElementById("submit").value = "";
-
-                // Access the element to store
-                // the generated captcha
                 captcha = document.getElementById("image");
                 let uniquechar = "";
 
                 const randomchar =
                     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-                // Generate captcha for length of
-                // 5 with random character
+                
+                // انشاء النص بشكل عشوائي
                 for (let i = 1; i < 5; i++) {
                     uniquechar += randomchar.charAt(
                         Math.random() * randomchar.length)
                 }
 
-                // Store generated input
+                //تخزين القيم
                 captcha.innerHTML = uniquechar;
             }
 
@@ -438,8 +433,8 @@
                 const usr_input = document
                     .getElementById("submit").value;
 
-                // Check whether the input is equal
-                // to generated captcha or not
+                // للتحقق من أن النص المدخل مساوي لقيمة
+                //  captcha 
                 if (usr_input == captcha.innerHTML) {
                     let s = document.getElementById("key")
                         .innerHTML = "Matched";
@@ -458,7 +453,7 @@
             arabicNameInput.addEventListener("input", function (event) {
                 const inputValue = event.data;
                 if (!isArabic(inputValue)) {
-                    // If the entered character is not Arabic, prevent it from being typed
+                    // لعدم السماح بكتابة الاسم بالانكليزية
                     event.target.value = event.target.value.replace(inputValue, '');
                     if (inputValue.trim() !== '')
                     alert("انت تكتب بالانكليزية لطفا الكتابة بالعربية.");
