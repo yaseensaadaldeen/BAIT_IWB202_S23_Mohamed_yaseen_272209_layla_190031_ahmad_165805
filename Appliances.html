@@ -252,21 +252,21 @@
                 <form class="form">
                     <div>
                         <label>الاسم الكامل</label>
-                        <input type="text" placeholder="type your name " lang="ar" required>
+                        <input name="arabicNameInput" type="text" id="arabicNameInput" placeholder="لطفا الادخال بالعربية" lang="ar">
                     </div>
                     <div> <label>رقم الهاتف</label>
                         <input type="text" placeholder="type your phone number" name="phonenumber"
-                            pattern="((0)(93|94|95|96|98|99)([0-9]{7}))|((0)(92|95|96|97)([0-9]{7}))" required>
+                            pattern="((0)(93|94|95|96|98|99)([0-9]{7}))|((0)(92|95|96|97)([0-9]{7}))">
                     </div>
                     <div> <label> تاريخ الميلاد</label>
-                        <input type="date" required>
+                        <input name="birthdate" type="date" >
                     </div>
                     <div> <label>البريد الالكتروني</label>
-                        <input type="email" placeholder="Enter your email" required>
+                        <input name="email" type="email" placeholder="Enter your email">
                     </div>
                     <div> <label>الرقم الوطني</label>
-                      
-                        <input type="text" maxlength="9" minlength="9" required>
+
+                        <input name="SotialNumber" type="text" maxlength="9" minlength="9" required>
                         <select style="margin-left: -40px" required>
 
                             <option>01</option>
@@ -298,7 +298,8 @@
                     width: 100%;" />
                     </div>
                     <p id="key"></p>
-                    <button type="submit" style="margin-bottom: 50px; width: 100%;" id="btn" onclick="printmsg()" >Submit</button>
+                    <button type="submit" style="margin-bottom: 50px; width: 100%;" id="btn"
+                        onclick="printmsg()">Submit</button>
 
                 </form>
             </div>
@@ -442,6 +443,8 @@
                 if (usr_input == captcha.innerHTML) {
                     let s = document.getElementById("key")
                         .innerHTML = "Matched";
+                    $final_price = document.getElementById('cart-final-price').innerText;
+                    alert("تم إتمام عملية الشراء بنجاح القيمة الواجب دفعها :" + $final_price);
 
                 }
                 else {
@@ -449,6 +452,22 @@
                         .innerHTML = "not Matched";
                     generate();
                 }
+            }
+            const arabicNameInput = document.getElementById("arabicNameInput");
+
+            arabicNameInput.addEventListener("input", function (event) {
+                const inputValue = event.data;
+                if (!isArabic(inputValue)) {
+                    // If the entered character is not Arabic, prevent it from being typed
+                    event.target.value = event.target.value.replace(inputValue, '');
+                    if (inputValue.trim() !== '')
+                    alert("انت تكتب بالانكليزية لطفا الكتابة بالعربية.");
+                }
+            });
+
+            function isArabic(text) {
+                const arabicRegex = /[\u0600-\u06FF]/;
+                return arabicRegex.test(text);
             }
 
         </script>
